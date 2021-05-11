@@ -17,6 +17,7 @@
   "devDependencies": {
     "css-loader": "5.0.0",
     "html-webpack-plugin": "4.5.0",
+    "sass": "^1.32.12",
     "sass-loader": "10.0.4",
     "style-loader": "2.0.0",
     "ts-loader": "8.2.0",
