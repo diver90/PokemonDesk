@@ -1,4 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
 body {
-    min-height: 100vh;
-    background: linear-gradient(180deg, #F6BD14 0%, #F5ffff 100%);
+    margin: 0;
+    padding: 0;
 }
