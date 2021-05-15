@@ -1,6 +1,6 @@
 import React from 'react';
 
-import s from './Parallax.module.scss';
+import style from "./style.module.scss";
 
 import SmallPokeBallPng from './assets/PokeBall1.png';
 import CloudPng from './assets/Cloud1.png';
@@ -8,22 +8,23 @@ import PokeBallPng from './assets/PokeBall2.png';
 import CloudBigPng from './assets/Cloud2.png';
 import PikachuPng from './assets/Pikachu.png';
 
+
 const Parallax = () => {
     return (
-        <div className={s.root}>
-            <div className={s.smallPokeBall}>
+        <div className={style.root}>
+            <div className={style.smallPokeBall}>
                 <img src={SmallPokeBallPng} alt="Small PokeBall" />
             </div>
-            <div className={s.cloud}>
+            <div className={style.cloud}>
                 <img src={CloudPng} alt="Cloud PokeBall" />
             </div>
-            <div className={s.cloudBig}>
+            <div className={style.cloudBig}>
                 <img src={CloudBigPng} alt="Cloud Big PokeBall" />
             </div>
-            <div className={s.pokeBall}>
+            <div className={style.pokeBall}>
                 <img src={PokeBallPng} alt="Big PokeBall" />
             </div>
-            <div className={s.pikachu}>
+            <div className={style.pikachu}>
                 <img src={PikachuPng} alt="Cloud PokeBall" />
             </div>
         </div>
