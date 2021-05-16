@@ -5,7 +5,14 @@
   background: linear-gradient(180deg, $third 0%, $primary 100%);
 }
 
-.contextWrap,
+.contextWrap {
+  width: 100%;
+  max-width: 80ch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contextText {
-  box-sizing: border-box;
+  flex-direction: column;
 }

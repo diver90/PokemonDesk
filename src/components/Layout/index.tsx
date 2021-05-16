@@ -7,7 +7,7 @@ interface ILayout {
 const Layout: React.FC<ILayout> = ({children, className}) => {
     return (
         <div className={className}>
-
+            {children}
         </div>
     )
 };

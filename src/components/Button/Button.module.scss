@@ -1,3 +1,4 @@
+@import "../../_variables";
 
 .root {
   border: none;
@@ -18,11 +19,23 @@
   line-height: 27px;
   text-align: center;
 
-  color: #212121;
+  color: $dark;
 
   &:active {
     box-shadow: inset 0px -6px 0px rgba(0,0,0,0.18);
   }
 
+}
+
+.wide {
+  width: 100%;
+}
+
+.green {
+  background: #73D677;
+}
+
+.yellow {
+  background: #F2CB07;
 }
 

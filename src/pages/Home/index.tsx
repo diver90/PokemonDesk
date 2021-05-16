@@ -5,6 +5,7 @@ import Button from "../../components/Button";
 import Parallax from "../../components/Parallax";
 
 import s from './Home.module.scss';
+import Heading from "../../components/Heading";
 
 
 const HomePage = () => {
@@ -13,12 +14,15 @@ const HomePage = () => {
             <Header/>
             <Layout className={s.contextWrap}>
                 <div className={s.contextText}>
-                    <h1>
+                    <Heading level={1}>
                         <b>Find</b> all your favorite <b>Pokemon</b>
-                    </h1>
+                    </Heading>
                     <p>You can choose</p>
-                    <Button onClick={() => console.log('Click Button')}>
-                        See Pokemons
+                    <Button
+                        buttonSize={'small'}
+                        buttonColor={'green'}
+                        onClick={() => console.log('Click Button')}>
+                        {'See Pokemons'}
                     </Button>
                 </div>
                 <Parallax/>
