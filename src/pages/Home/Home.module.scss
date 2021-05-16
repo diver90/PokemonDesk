@@ -6,13 +6,12 @@
 }
 
 .contextWrap {
-  width: 100%;
-  max-width: 80ch;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .contextText {
+  width: 506px;
   flex-direction: column;
+  max-width: 400px;
 }
