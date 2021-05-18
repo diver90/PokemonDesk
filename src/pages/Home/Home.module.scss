@@ -1,0 +1,17 @@
+@import "../../_variables";
+
+.root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
+}
+
+.contextWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.contextText {
+  width: 506px;
+  flex-direction: column;
+  max-width: 400px;
+}
