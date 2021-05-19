@@ -3,13 +3,20 @@ import Heading from "../Heading";
 
 import s from './PokemonCard.module.scss';
 
-interface IPokemon {
+export interface stats {
+    hp: number,
     attack: number,
     defense: number,
+    speed: number,
+    'special-attack': number,
+    'special-defense': number,
+}
+
+export interface IPokemon {
     name: string,
     name_clean: string,
     abilities: [],
-    stats:[],
+    stats: stats,
     types:[]
     img:string,
     base_experience: number,
@@ -18,10 +25,9 @@ interface IPokemon {
     is_default: boolean,
     order:number,
     weight: number
-
 }
 
-const PokemonCard: React.FC<IPokemon> = ({attack, defense, name}) => {
+const PokemonCard: React.FC<IPokemon> = ({stats, name, types, img}) => {
     return (
         <div className={s.root}>
             <div className={s.infoWrap}>
@@ -31,13 +37,13 @@ const PokemonCard: React.FC<IPokemon> = ({attack, defense, name}) => {
                 <div className={s.statWrap}>
                     <div className={s.statItem}>
                         <div className={s.statValue}>
-                            {attack}
+                            {stats.attack}
                         </div>
                         Attack
                     </div>
                     <div className={s.statItem}>
                         <div className={s.statValue}>
-                            {defense}
+                            {stats.defense}
                         </div>
                         Defense
                     </div>

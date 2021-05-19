@@ -272,6 +272,7 @@ const POKEMONS = [
 ];
 
 
+
 const PokedexPage = () => {
     return (
         <div className={s.root}>
