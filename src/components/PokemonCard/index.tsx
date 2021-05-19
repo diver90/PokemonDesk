@@ -17,7 +17,7 @@ export interface IPokemon {
     name_clean: string,
     abilities: [],
     stats: stats,
-    types:[]
+    types:string[]
     img:string,
     base_experience: number,
     height:number,
@@ -27,7 +27,15 @@ export interface IPokemon {
     weight: number
 }
 
-const PokemonCard: React.FC<IPokemon> = ({stats, name, types, img}) => {
+export interface IPokemonCard {
+    name: string,
+    attack: number,
+    defense: number,
+    img:string,
+    types:string[]
+}
+
+const PokemonCard: React.FC<IPokemonCard> = ({attack, defense, name, types, img}) => {
     return (
         <div className={s.root}>
             <div className={s.infoWrap}>
@@ -37,13 +45,13 @@ const PokemonCard: React.FC<IPokemon> = ({stats, name, types, img}) => {
                 <div className={s.statWrap}>
                     <div className={s.statItem}>
                         <div className={s.statValue}>
-                            {stats.attack}
+                            {attack}
                         </div>
                         Attack
                     </div>
                     <div className={s.statItem}>
                         <div className={s.statValue}>
-                            {stats.defense}
+                            {defense}
                         </div>
                         Defense
                     </div>
@@ -53,7 +61,7 @@ const PokemonCard: React.FC<IPokemon> = ({stats, name, types, img}) => {
                 </div>
             </div>
             <div className={s.pictureWrap}>
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander" />
+                <img src={img} />
             </div>
         </div>
     );

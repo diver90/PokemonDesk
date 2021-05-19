@@ -8,6 +8,13 @@
   display: flex;
   justify-content: center;
 }
+.pokemonCards {
+   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+ }
 
 .contextText {
   max-width: 800px;
@@ -15,10 +22,9 @@
   font-weight: normal;
   font-size: 35px;
   line-height: 41px;
-
-  /* identical to box height */
   text-align: center;
   letter-spacing: 3px;
+  margin-bottom: auto;
 
   color: $dark;
 }
