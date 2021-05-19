@@ -1,0 +1,24 @@
+@import "../../_variables";
+
+.root {
+  min-height: 100vh;
+}
+
+.contextWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.contextText {
+  max-width: 800px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 41px;
+
+  /* identical to box height */
+  text-align: center;
+  letter-spacing: 3px;
+
+  color: $dark;
+}
