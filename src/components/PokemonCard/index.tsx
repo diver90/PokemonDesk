@@ -1,5 +1,6 @@
 import React from 'react';
 import Heading from "../Heading";
+import cn from 'classnames';
 
 import s from './PokemonCard.module.scss';
 
@@ -15,15 +16,15 @@ export interface stats {
 export interface IPokemon {
     name: string,
     name_clean: string,
-    abilities: [],
+    abilities: string[],
     stats: stats,
-    types:string[]
-    img:string,
+    types: string[]
+    img: string,
     base_experience: number,
-    height:number,
-    id:number,
+    height: number,
+    id: number,
     is_default: boolean,
-    order:number,
+    order: number,
     weight: number
 }
 
@@ -31,8 +32,8 @@ export interface IPokemonCard {
     name: string,
     attack: number,
     defense: number,
-    img:string,
-    types:string[]
+    img: string,
+    types: string[]
 }
 
 const PokemonCard: React.FC<IPokemonCard> = ({attack, defense, name, types, img}) => {
@@ -57,12 +58,15 @@ const PokemonCard: React.FC<IPokemonCard> = ({attack, defense, name, types, img}
                     </div>
                 </div>
                 <div className={s.labelWrap}>
-                    { console.log(types) }
-                    <span className={s.label}>Fire</span>
+                    {
+                        types.map(type => {
+                            return <span className={cn(s.label, s[type as keyof typeof s])}>{type}</span>
+                        })
+                    }
                 </div>
             </div>
-            <div className={s.pictureWrap}>
-                <img src={img} />
+            <div className={cn(s.pictureWrap, s[types[0] as keyof typeof s])}>
+                <img src={img}/>
             </div>
         </div>
     );

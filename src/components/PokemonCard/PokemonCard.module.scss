@@ -1,8 +1,9 @@
+@import "../../_variables";
 .root {
   width: 351px;
   height: 136px;
   box-shadow: 4px 4px 4px rgba(33, 33, 33, 0.1);
-  background: #F6F7F9;
+  background: $white;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -52,7 +53,7 @@
 .statValue {
   width: 36px;
   height: 36px;
-  border: 3px solid #212121;
+  border: 3px solid $dark;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
@@ -109,3 +110,35 @@
   justify-content: flex-start;
   align-items: center;
 }
+
+.grass, .bug {
+  background: $grass
+}
+
+.fire, .fighting, .dragon {
+  background: $fire;
+}
+.poison, .psychic, .fairy, .ghost {
+  background: $poison;
+}
+
+.ice, .water {
+  background: $ice;
+}
+
+.Stile, .dark, .rock {
+  background: $rock
+}
+
+.normal, .gosth {
+  background: $normal
+}
+
+.ground {
+  background: $ground
+}
+
+.electric {
+  background: $electric
+}
+

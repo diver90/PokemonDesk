@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from '../../components/Header';
-import Layout from '../../components/Layout';
-import PokemonCard from '../../components/PokemonCard';
+import PokemonCard, {IPokemon} from '../../components/PokemonCard';
 import s from './Pokedex.module.scss';
 
-const POKEMONS = [
+interface IPokemons extends Array<IPokemon> {
+  [index: number]:IPokemon,
+}
+const POKEMONS: IPokemons = [
   {
     name_clean: 'bulbasaur',
     abilities: ['overgrow', 'chlorophyll'],
@@ -228,9 +230,9 @@ const PokedexPage = () => {
           </p>
         </div>
         <div className={s.pokemonCards}>
-          {POKEMONS.map(({ name, stats, types, img }, index) => {
+          {POKEMONS.map(({ name, stats, types, img, id }) => {
             return (
-                <PokemonCard key={index} name={name} attack={stats.attack} defense={stats.defense} types={types} img={img} />
+                <PokemonCard key={id} name={name} attack={stats.attack} defense={stats.defense} types={types} img={img} />
             );
           })}
         </div>
