@@ -1,8 +1,10 @@
 import React from 'react';
-import HomePage from './pages/Home';
+import {useRoutes} from "hookrouter";
+import routes from "./routes";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
-  return <HomePage/>;
+  return useRoutes(routes)|| <NotFound />;
 };
 
 export default App;

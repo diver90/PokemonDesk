@@ -1,0 +1,31 @@
+@import "../../_variables";
+
+.root {
+  min-height: 100vh;
+}
+
+.contextWrap {
+  display: flex;
+  justify-content: center;
+}
+.pokemonCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+ }
+
+.contextText {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 35px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: auto;
+
+  color: $dark;
+}

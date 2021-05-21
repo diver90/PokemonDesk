@@ -4,8 +4,11 @@ import Layout from "../../components/Layout";
 import Button from "../../components/Button";
 import Parallax from "../../components/Parallax";
 import Heading from "../../components/Heading";
+import {navigate} from "hookrouter";
+import {LinkEnum} from "../../routes";
 
 import s from './Home.module.scss';
+
 
 
 
@@ -23,7 +26,7 @@ const HomePage = () => {
                     <Button
                         buttonSize={'normal'}
                         buttonColor={'green'}
-                        onClick={() => console.log('Click Button')}>
+                        onClick={() => navigate(LinkEnum.POKEDEX)}>
                         {'See Pokemons'}
                     </Button>
                 </div>

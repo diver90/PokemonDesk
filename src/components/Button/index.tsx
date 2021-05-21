@@ -5,8 +5,8 @@ import s from './Button.module.scss';
 
 interface ButtonProps {
     onClick: ( event: React.MouseEvent<HTMLButtonElement> ) => void,
-    buttonColor: string,
-    buttonSize: string,
+    buttonColor: 'green' | 'yellow',
+    buttonSize: 'normal' | 'small',
 }
 
 const Button: React.FC<ButtonProps> = ({
