@@ -3,7 +3,7 @@ import React from "react";
 import './Heading.module.scss';
 
 interface IHeading {
-    level: 1 | 2 | 3 | 5 | 6;
+    level: 1 | 2 | 3 | 4 | 5 | 6;
     children?: React.ReactNode;
     className?: string
 }

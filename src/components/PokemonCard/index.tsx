@@ -39,7 +39,7 @@ const PokemonCard: React.FC<IPokemonCard> = ({attack, defense, name, types, img}
     return (
         <div className={s.root}>
             <div className={s.infoWrap}>
-                <Heading level={6} className={s.titleName}>
+                <Heading level={4} className={s.titleName}>
                     {name}
                 </Heading>
                 <div className={s.statWrap}>
@@ -57,6 +57,7 @@ const PokemonCard: React.FC<IPokemonCard> = ({attack, defense, name, types, img}
                     </div>
                 </div>
                 <div className={s.labelWrap}>
+                    { console.log(types) }
                     <span className={s.label}>Fire</span>
                 </div>
             </div>
