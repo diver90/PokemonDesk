@@ -3,9 +3,11 @@
 .root {
   height: 93px;
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, $third 0%, $primary 100%);
+  background: $third;
+  box-shadow: 0px 4px 16px 0px rgba(1, 28, 64, 0.2);
 }
 
 .wrap {
