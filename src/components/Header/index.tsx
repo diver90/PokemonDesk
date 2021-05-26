@@ -6,12 +6,6 @@ import s from './Header.module.scss';
 import {ReactComponent as PokemonLogoSvg} from './assets/Logo.svg';
 import {GENERAL_MENU} from "../../routes";
 
-interface IMenu {
-    id: number;
-    value: string;
-    link: string;
-}
-
 const Header = () => {
     const path = usePath();
     return (
@@ -40,4 +34,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default React.memo(Header);

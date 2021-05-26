@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../../components/Header';
 import Layout from "../../components/Layout";
 import Button from "../../components/Button";
 import Parallax from "../../components/Parallax";
@@ -9,13 +8,9 @@ import {LinkEnum} from "../../routes";
 
 import s from './Home.module.scss';
 
-
-
-
 const HomePage = () => {
     return (
         <div className={s.root}>
-            <Header/>
             <Layout className={s.contextWrap}>
                 <div className={s.contextText}>
                     <Heading level={1}>

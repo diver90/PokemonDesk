@@ -1,7 +1,7 @@
 import React from "react";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import EmptyPage from "./pages/EmptyPage";
-import PokedexPage from "./pages/Pokedex";
+import PokedexPage from "./pages/PokedexPage";
 
 interface IGeneralMenu {
     title: string,
