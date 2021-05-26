@@ -54,7 +54,7 @@ export interface IAccMenu {
     [n: string]: (props: PropsWithChildren<any>) => JSX.Element
 }
 
-const routes = [GENERAL_MENU, SECOND_ROUTES].reduce((acc:IAccMenu, item:IGeneralMenu) => {
+const routes = [...GENERAL_MENU, ...SECOND_ROUTES].reduce((acc:IAccMenu, item:IGeneralMenu) => {
     acc[item.link] = item.component;
     return acc;
 }, {});
