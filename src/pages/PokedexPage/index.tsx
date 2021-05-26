@@ -1,6 +1,6 @@
 import React, {useMemo, useState} from 'react';
 import PokemonCard from '../../components/PokemonCard';
-import useData, {IPokemons} from "../../hooks/getData";
+import useData from "../../hooks/getData";
 
 import s from './Pokedex.module.scss';
 
@@ -8,9 +8,15 @@ const PokedexPage = () => {
     const [searchValue, setSearchValue] = useState('');
     const [query, setQuery] = useState([]);
 
-    const {data, isLoading, isError} = useData('getPokemons', query, [searchValue]);
-    const pokemons: IPokemons | undefined = data?.pokemons;
-    const totalPokemons: number | undefined = data?.total;
+    const {
+        data,
+        isLoading,
+        isError
+    } = useData <IPokemons>(
+        'getPokemons',
+        query,
+        [searchValue]
+    );
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
         setQuery((s) => ({
@@ -31,14 +37,14 @@ const PokedexPage = () => {
         <div className={s.root}>
             <div className={s.contextText}>
                 <p>
-                    <b>{totalPokemons}</b> Pokemons for you to choose your favorite{' '}
+                    <b>{data?.total}</b> Pokemons for you to choose your favorite{' '}
                 </p>
             </div>
             <div>
                 <input type="text" value={searchValue} onChange={handleSearchChange}/>
             </div>
             <div className={s.pokemonCards}>
-                {pokemons?.map(({name, stats, types, img, id}) => {
+                {data?.pokemons?.map(({name, stats, types, img, id}) => {
                     return (
                         <PokemonCard key={id} name={name} attack={stats.attack} defense={stats.defense} types={types}
                                      img={img}/>

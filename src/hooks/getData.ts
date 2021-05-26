@@ -1,19 +1,5 @@
 import {useEffect, useState} from "react";
 import req from "../utils/request";
-import {IPokemon} from "../components/PokemonCard";
-
-
-export interface IPokemons extends Array<IPokemon> {
-    [index: number]: IPokemon;
-}
-
-interface IData {
-    total: number;
-    count: number;
-    offset: number;
-    limit: number;
-    pokemons: IPokemons;
-}
 
 const useData = <T>(endpoint: string, query: object, deps: any[] = []) => {
     const [data, setData] = useState<T | null>(null);
