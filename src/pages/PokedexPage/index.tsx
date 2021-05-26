@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 import PokemonCard from '../../components/PokemonCard';
 import useData, {IPokemons} from "../../hooks/getData";
 
@@ -6,11 +6,17 @@ import s from './Pokedex.module.scss';
 
 const PokedexPage = () => {
     const [searchValue, setSearchValue] = useState('');
-    const {data, isLoading, isError} = useData('getPokemons', {name: searchValue});
+    const [query, setQuery] = useState([]);
+
+    const {data, isLoading, isError} = useData('getPokemons', query, [searchValue]);
     const pokemons: IPokemons | undefined = data?.pokemons;
     const totalPokemons: number | undefined = data?.total;
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
+        setQuery((s) => ({
+            ...s,
+                name: e.target.value
+        }));
     };
 
     if (isLoading) {

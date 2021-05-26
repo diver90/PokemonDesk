@@ -15,19 +15,18 @@ interface IData {
     pokemons: IPokemons;
 }
 
-const useData = (endpoint: string, query: object) => {
-    const [data, setData] = useState<IData | null>(null);
-    const [isLoading, setLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
-    console.log(`Working`);
+const useData = <T>(endpoint: string, query: object, deps: any[] = []) => {
+    const [data, setData] = useState<T | null>(null);
+    const [isLoading, setLoading] = useState<boolean>(true);
+    const [isError, setIsError] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log(`Working2`);
-        const getData = async () => {
+        
+        const getData = async (): Promise<void> => {
 
             setLoading(true);
             try {
-                const result = await req(endpoint, query);
+                const result = await req<T>(endpoint, query);
                 setData(result);
             } catch (e) {
                 setIsError(true);
@@ -37,7 +36,7 @@ const useData = (endpoint: string, query: object) => {
         };
 
         getData();
-    }, [query]);
+    }, deps);
     return {
         data,
         isLoading,
