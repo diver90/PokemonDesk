@@ -49,13 +49,14 @@ const PokedexPage = () => {
 
     return (
         <div className={s.root}>
+            <div className={s.contextWrap}>
             <div className={s.contextText}>
                 <Heading level={1} >
                     <b>{!isLoading && data && data.total}</b> Pokemons for you to choose your favorite{' '}
                 </Heading>
             </div>
             <div>
-                <input type="text" value={searchValue} onChange={handleSearchChange}/>
+                <input className={s.searchInput} type="text" value={searchValue} onChange={handleSearchChange}/>
             </div>
             <div className={s.pokemonCards}>
                 {!isLoading && data && data.pokemons.map(({name, stats, types, img, id}: PokemonRequest) => {
@@ -64,6 +65,7 @@ const PokedexPage = () => {
                                      img={img}/>
                     );
                 })}
+            </div>
             </div>
         </div>
     );
