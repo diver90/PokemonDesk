@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRoutes } from 'hookrouter';
-import routes from './routes';
+import routes, {IGeneralMenu} from './routes';
 import NotFound from './pages/NotFoundPage';
 import Header from './components/Header';
 
