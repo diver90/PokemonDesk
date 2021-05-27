@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cardWrap {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 420px;
+  width: 800px;
+  left: 320px;
+  top: 302px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #732119 42.19%, #D93E30 100%);
+}
+img {
+  height: 348px;
+  width: 341px;
+  left: 1.6px;
+  top: -22px;
+
+}
+.cardImg {
+  display: inline-block;
+  position: relative;
+  width: 380px;
+  height: 100%;
+  background: linear-gradient(270deg, #B33327 0.15%, #D93E30 100%);
+  box-shadow: 4px 4px 8px 0px rgba(1, 28, 64, 0.2);
+  border-radius: 16px 0 0 16px;
+}
+ .cardText {
+   display: inline-block;
+   height: 371px;
+   width: 420px;
+ }

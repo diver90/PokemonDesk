@@ -4,8 +4,10 @@ import useData from "../../hooks/getData";
 import {IPokemons, PokemonRequest} from "../../interface/pokemons";
 import Heading from "../../components/Heading";
 import useDebounce from "../../utils/useDebounce";
+import {A} from "hookrouter";
 
 import s from './Pokedex.module.scss';
+import {LinkEnum} from "../../routes";
 
 
 interface IQuery {
@@ -51,18 +53,20 @@ const PokedexPage = () => {
         <div className={s.root}>
             <div className={s.contextWrap}>
             <div className={s.contextText}>
-                <Heading level={1} >
+                <Heading level={2} >
                     <b>{!isLoading && data && data.total}</b> Pokemons for you to choose your favorite{' '}
                 </Heading>
             </div>
             <div>
-                <input className={s.searchInput} type="text" value={searchValue} onChange={handleSearchChange}/>
+                <input type="text" value={searchValue} onChange={handleSearchChange}/>
             </div>
             <div className={s.pokemonCards}>
                 {!isLoading && data && data.pokemons.map(({name, stats, types, img, id}: PokemonRequest) => {
                     return (
+                        <A href={`/pokedex/${id}`}>
                         <PokemonCard key={id} name={name} attack={stats.attack} defense={stats.defense} types={types}
                                      img={img}/>
+                        </A>
                     );
                 })}
             </div>

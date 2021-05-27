@@ -1,10 +1,11 @@
 import React from 'react';
 import {A, usePath} from 'hookrouter';
 import cn from 'classnames';
-import s from './Header.module.scss';
-
 import {ReactComponent as PokemonLogoSvg} from './assets/Logo.svg';
 import {GENERAL_MENU} from "../../routes";
+
+import s from './Header.module.scss';
+
 
 const Header = () => {
     const path = usePath();

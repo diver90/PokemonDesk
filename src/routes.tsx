@@ -48,7 +48,7 @@ const SECOND_ROUTES: IGeneralMenu[] = [{
     title: 'Pokemon',
     link: LinkEnum.POKEMON,
     component: ({id}: PokemonProps) => <PokemonPage id={id} />
-}]
+}];
 
 export interface IAccMenu {
     [n: string]: (props: PropsWithChildren<any>) => JSX.Element
