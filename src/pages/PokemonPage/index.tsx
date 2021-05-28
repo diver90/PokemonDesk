@@ -1,12 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
+import {IQuery} from "../../interface/query";
+import useData from "../../hooks/getData";
+import {IPokemons, PokemonRequest} from "../../interface/pokemons";
 
 import s from './Pokemon.module.scss';
+
 
 export interface PokemonProps  {
     id: string | number
 }
 
 const PokemonPage: React.FC<PokemonProps> = ({id}) => {
+    const query:IQuery = ({
+        id: id
+    });
+    const {
+        data,
+        isLoading,
+        isError
+    } = useData <PokemonRequest>(
+        'getPokemonById',
+        query );
+    console.log(data);
     return (
         <div className={s.root}>
             <div className={s.cardWrap}>

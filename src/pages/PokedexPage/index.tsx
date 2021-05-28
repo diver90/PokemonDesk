@@ -5,15 +5,9 @@ import {IPokemons, PokemonRequest} from "../../interface/pokemons";
 import Heading from "../../components/Heading";
 import useDebounce from "../../utils/useDebounce";
 import {A} from "hookrouter";
+import {IQuery} from "../../interface/query";
 
 import s from './Pokedex.module.scss';
-import {LinkEnum} from "../../routes";
-
-
-interface IQuery {
-    name?: string,
-    limit?:number
-}
 
 const PokedexPage = () => {
     const [searchValue, setSearchValue] = useState('');
