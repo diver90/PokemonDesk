@@ -19,8 +19,17 @@ describe('getUrlWithParamsConfig', ()  => {
              query: {name: "Pikachu"},
          })
     });
-    test('Должна принимать два аргумента "getPokemon" и {id: 1}, на выходе получить объект с полями protokol, host, и обьектом query, с полем id, равным 25', () => {
+    test('Должна принимать два аргумента "getPokemon" и {id: 25}, на выходе получить объект с полями protokol, host, и обьектом query, с полем id, равным 25', () => {
         const url = getUrlWithParamsConfig('getPokemon', {id: 25});
+         expect(url.uri).toEqual({
+             protocol: 'http',
+             host: 'zar.hosthot.ru',
+             pathname: '/api/v1/pokemon/25',
+             query: {},
+         })
+    });
+    test('Должна принимать два аргумента "postPokemon" и {id: 25}, на выходе body равный {id: 25}', () => {
+        const url = getUrlWithParamsConfig('postPokemon', {id: 25});
          expect(url.uri).toEqual({
              protocol: 'http',
              host: 'zar.hosthot.ru',

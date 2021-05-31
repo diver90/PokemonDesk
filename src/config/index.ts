@@ -16,7 +16,13 @@ export const config = {
                uri: {
                    pathname: '/api/v1/pokemon/{id}',
                }
-           }
+           },
+            postPokemon: {
+                method: 'POST',
+                uri: {
+                    pathname: '/api/v1/pokemon/{id}',
+                }
+            }
         }
     }
 };

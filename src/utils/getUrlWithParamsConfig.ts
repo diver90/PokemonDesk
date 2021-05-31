@@ -1,4 +1,4 @@
-import config, {ConfigEndpointKeyType} from '../config';
+import config from '../config';
 
 interface IApiconfigUri {
     host: string,
