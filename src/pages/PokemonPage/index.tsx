@@ -19,17 +19,27 @@ const PokemonPage: React.FC<PokemonProps> = ({id}) => {
         isLoading,
         isError
     } = useData <PokemonRequest>(
-        'getPokemonById',
+        'getPokemon',
         query );
-    console.log(data);
+
+    if (isLoading) {
+        return (
+            <div>Loading...</div>
+        )
+    }
+    if (isError) {
+        return (
+            <div>Error!!!</div>
+        )
+    }
     return (
         <div className={s.root}>
             <div className={s.cardWrap}>
                 <div className={s.cardImg}>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" alt="img"/>
+                    <img src={data?.img}/>
                 </div>
                 <div className={s.cardText}>
-                    This is pokemon page {id}
+                    This is pokemon page {data?.name}
                 </div>
             </div>
 
