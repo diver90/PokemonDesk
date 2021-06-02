@@ -58,7 +58,7 @@ const PokedexPage = () => {
             <div className={s.pokemonCards}>
                 {!isLoading && data && data.pokemons.map(({name, stats, types, img, id}: PokemonRequest) => {
                     return (
-                        <A href={`/${LinkEnum.POKEDEX}/${id}`}>
+                        <A href={`${LinkEnum.POKEDEX}/${id}`}>
                         <PokemonCard key={id} name={name} attack={stats.attack} defense={stats.defense} types={types}
                                      img={img}/>
                         </A>

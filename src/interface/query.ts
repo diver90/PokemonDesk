@@ -1,5 +1,15 @@
 export interface IQuery {
     name?: string,
     limit?:number,
-    id?:number | string
+    id?:number | string,
+    attack_from?:number,
+    attack_to?:number,
+    exp_from?:number,
+    exp_to?:number,
+    hp_from?:number,
+    hp_to?:number,
+    defense_from?:number,
+    defense_to?:number,
+    speed_from?:number,
+    speed_to?:number,
 }
