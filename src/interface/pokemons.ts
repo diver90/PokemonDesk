@@ -31,3 +31,5 @@ let pokemonsData = {
 };
 
 export type PokemonRequest = typeof pokemonsData;
+
+export type ITypesRequest = string[];
